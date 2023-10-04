@@ -1,0 +1,8 @@
+{
+  "name": "JCB_INDUS-IONIC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "b84a19e9"
+}
