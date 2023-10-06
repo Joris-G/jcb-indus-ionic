@@ -1,0 +1,20 @@
+APPLICATION SUIVI INDUS JCB AERO
+
+Projets/Affaires :
+	Nom projet/Affaire :
+	Chargé d'affaire/ Reponsable projet :
+
+Utilisateurs : 
+	Nom :
+	Prénom :
+	Service :
+	
+
+Tableau de bord
+	Actions perso
+	Actions projets
+	Actions Service
+	
+
+Therminologie : Jalon, action, tache,
+
