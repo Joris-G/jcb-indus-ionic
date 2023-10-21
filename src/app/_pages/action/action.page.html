@@ -1,0 +1,101 @@
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row class="action-header">
+      <ion-col size="4">
+        <ion-card>
+          <ion-card-header>
+            <!-- TODO lier à un numéro d'acion -->
+            <ion-card-title>Action n°1</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>Date ouverture :</ion-col>
+                <ion-col>10/10/2023</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Ouvert par :</ion-col>
+                <ion-col>j.fischer</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Projet :</ion-col>
+                <ion-col>F10X VOILURES</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Responsable action :</ion-col>
+                <ion-col>j.grangier</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Date de besoin :</ion-col>
+                <ion-col>12/10/2023</ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+      <ion-col size="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Objectif action</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+            et ea, totam est quidem, cumque dignissimos magni eligendi, beatae
+            eum quam tempora. Harum, magnam? Quibusdam doloribus magni rem sit
+            iure? Quisquam incidunt deserunt dolorum omnis quas qui voluptate.
+            Ipsum ex facilis exercitationem ab. Fugit libero tenetur deleniti
+            sit. Nam placeat sed, in corporis quam ut cumque quis molestias
+            officia delectus.
+          </ion-card-content>
+        </ion-card></ion-col
+      >
+    </ion-row>
+    <ion-row class="action-header">
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Avancement</ion-card-title>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-toolbar button
+              ><ion-button
+                (click)="addAction()"
+                expand="block"
+                fill="clear"
+                shape="round"
+              >
+                Click me
+              </ion-button>
+            </ion-toolbar>
+          </ion-card-header>
+          <ion-card-content>
+            <ngx-datatable [rows]="rows" [columns]="columns">
+              <ngx-datatable-column name="Descripezftion">
+                <ng-template
+                  ngx-datatable-cell-template
+                  let-rowIndex="rowIndex"
+                  let-value="value"
+                  let-row="row"
+                >
+                  <span
+                    title="Double click to edit"
+                    (dblclick)="editing[rowIndex + '-description'] = true"
+                    *ngIf="!editing[rowIndex + '-description']"
+                  >
+                    {{ value }}
+                  </span>
+                  <input
+                    autofocus
+                    (blur)="updateValue($event, 'description', rowIndex)"
+                    *ngIf="editing[rowIndex+'-description']"
+                    type="text"
+                    [value]="value"
+                  />
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
