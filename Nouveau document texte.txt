@@ -3,7 +3,7 @@ APPLICATION SUIVI INDUS JCB AERO
 Objectifs : 
 
 # Problématique 1 :
-  Faire le suivi d'un projet indus aérostructure
+  Faire le suivi d'un projet indus aérostructure. Mettre à jours à partir des actions des indicateurs qui permettent de communiquer avec les PM
 
   Lister les étapes clés d'un projet demander l'aide aux PM pour ça.
 
