@@ -1,5 +1,23 @@
 APPLICATION SUIVI INDUS JCB AERO
 
+Objectifs : 
+
+# Problématique 1 :
+  Faire le suivi d'un projet indus aérostructure. Mettre à jours à partir des actions des indicateurs qui permettent de communiquer avec les PM
+
+  Lister les étapes clés d'un projet demander l'aide aux PM pour ça.
+
+  Lister des typologie de pièces rencontrées dans une indus. On partira des projets F10X Voilures et F8X BH & Canoe. ça sera une liste à faire vivre
+
+  Associer à chaque typologie les étapes d'industrialisation minimale. Cela servira de template pour initialiser un certain nombre d'actions de base à réaliser à chaque PN correspondant à la typologie.
+
+
+# Problématique 2 :
+  
+  
+
+
+
 Projets/Affaires :
 	Nom projet/Affaire :
 	Chargé d'affaire/ Reponsable projet :
