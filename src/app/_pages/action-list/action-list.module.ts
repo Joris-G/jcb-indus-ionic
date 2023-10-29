@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ActionListPageRoutingModule } from './action-list-routing.module';
 
 import { ActionListPage } from './action-list.page';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ActionListPageRoutingModule
+    NgxDatatableModule,
+    ActionListPageRoutingModule,
   ],
-  declarations: [ActionListPage]
+  declarations: [ActionListPage],
 })
 export class ActionListPageModule {}

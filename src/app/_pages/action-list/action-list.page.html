@@ -4,4 +4,67 @@
       <ion-title size="large">{{pageTitle}}</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>Action List Table</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ngx-datatable
+        [rows]="actionsRows"
+        [columns]="columns"
+        (activate)="onRowClick($event)"
+      >
+        <ngx-datatable-column name="Statut" prop="status">
+          <!-- <ng-template ngx-datatable-header-template>
+            {{ col.name }}
+        </ng-template> -->
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Créé par" prop="createdBy">
+          <!-- <ng-template ngx-datatable-header-template>
+            {{ col.name }}
+        </ng-template> -->
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Titre" prop="title">
+          <!-- <ng-template ngx-datatable-header-template>
+            {{ col.name }}
+        </ng-template> -->
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Description">
+          <!-- <ng-template ngx-datatable-header-template>
+            {{ col.name }}
+        </ng-template> -->
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Date de besoin" prop="needDate">
+          <!-- <ng-template ngx-datatable-header-template>
+            {{ col.name }}
+        </ng-template> -->
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Responsable">
+          <!-- <ng-template ngx-datatable-header-template>
+            {{ col.name }}
+        </ng-template> -->
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            {{ value }}
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
