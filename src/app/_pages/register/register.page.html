@@ -1,7 +1,60 @@
 <ion-content [fullscreen]="true">
+ 
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">register</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onRegisterClick()">
+    <ion-item>
+      <ion-label>Nom</ion-label>
+      <ion-input required formControlName="nom" placeholder="Entrer votre nom"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Prénom</ion-label>
+      <ion-input required formControlName="prenom" placeholder="Entrer votre prénom"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <!-- <ion-label>Adresse mail</ion-label> -->
+      <ion-input label="adress" type="email" formControlName="email" placeholder="Entrer votre adresse mail"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Rôle</ion-label>
+      <ion-select formControlName="role">
+        <ion-select-option value="basic">Basic</ion-select-option>
+        <ion-select-option value="admin">Admin</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Service actuel</ion-label>
+      <ion-select formControlName="service">
+       
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Projets actuels</ion-label>
+      <ion-select formControlName="projets">
+     
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Mot de passe</ion-label>
+      <ion-input type="password" required formControlName="motDePasse" placeholder="Entrer votre mot de passe"></ion-input>
+    </ion-item>
+    
+    <ion-button type="submit">S'enregistrer</ion-button>
+  </form>
+
+  <div class="result">
+    {{registerForm.value | json}}
+    {{3 | currency}}
+  </div>
 </ion-content>
