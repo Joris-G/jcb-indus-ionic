@@ -7,7 +7,7 @@ import { HeaderTitleService } from 'src/app/_services/header-title.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  pageTitle: string = 'Home';
+  pageTitle: string = 'Home test';
   headerTitleService = inject(HeaderTitleService);
   constructor() {}
 
