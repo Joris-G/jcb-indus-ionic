@@ -1,0 +1,6 @@
+<!-- <div class="btn">Actions</div>
+<div class="btn">Users</div>
+<div class="btn">parametres</div> -->
+<ion-item *ngFor="let item of menu_items" [routerLink]="[item.url]" [color]="item.color">
+  {{item.menuName}}
+</ion-item>
