@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FormulaireUtilisateurComponent } from './formulaire-utilisateur.component';
+import { RegisterFormComponent } from './register-form.component';
 
-describe('FormulaireUtilisateurComponent', () => {
-  let component: FormulaireUtilisateurComponent;
-  let fixture: ComponentFixture<FormulaireUtilisateurComponent>;
+describe('RegisterFormComponent', () => {
+  let component: RegisterFormComponent;
+  let fixture: ComponentFixture<RegisterFormComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormulaireUtilisateurComponent ],
+      declarations: [ RegisterFormComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FormulaireUtilisateurComponent);
+    fixture = TestBed.createComponent(RegisterFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

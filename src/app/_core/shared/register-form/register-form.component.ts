@@ -5,11 +5,11 @@ import { User } from 'src/app/_interfaces/user.interface';
 import { UserService } from 'src/app/_services/user.service';
 
 @Component({
-  selector: 'app-formulaire-utilisateur',
-  templateUrl: './formulaire-utilisateur.component.html',
-  styleUrls: ['./formulaire-utilisateur.component.scss'],
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.scss'],
 })
-export class FormulaireUtilisateurComponent {
+export class RegisterFormComponent {
 
   public registerForm: FormGroup;
   public liste_role=[{value:"Methodiste",viewValue:"Méthodiste"},{value:"Qualite",viewValue:"Qualité"},{value:"PM",viewValue:"PM"}];
