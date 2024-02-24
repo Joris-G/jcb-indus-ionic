@@ -1,0 +1,8 @@
+
+<div mode="md" class="logo" [routerLink]="['/home']">
+  <img src="assets/Images/jcblogo.png" alt="logo">
+</div>
+
+<ion-item *ngFor="let item of menu_items" [routerLink]="[item.url]" [color]="item.color">
+  {{item.menuName}}
+</ion-item>

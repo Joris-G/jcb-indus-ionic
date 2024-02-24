@@ -1,0 +1,13 @@
+:host{
+    display: flex;
+}
+.logo{
+     height: 100%;
+    width: 120px;
+    padding: 0.5rem;
+    border-right: solid medium #808080;
+    img{
+        height: 100%;
+    }
+    cursor: pointer;
+}

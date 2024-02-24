@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './_core/shared/menu/menu.component';
 import { HeaderComponent } from './_core/shared/header/header.component';
-import { FormulaireUtilisateurComponent } from './_core/shared/formulaire-utilisateur/formulaire-utilisateur.component';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent, HeaderComponent],
