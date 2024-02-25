@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { HomeGuard } from './_/guards/home.guard';
+import { HomeGuard } from './_guards/home.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'project',
+    title: 'PROJET',
     loadChildren: () =>
       import('./_pages/project/project.module').then(
         (m) => m.ProjectPageModule
@@ -36,8 +37,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    canActivate:[HomeGuard],
-    
+    canActivate: [HomeGuard],
+
     loadChildren: () =>
       import('./_pages/home/home.module').then((m) => m.HomePageModule),
   },
@@ -62,7 +63,7 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    loadChildren: () => import('./_pages/projects/projects.module').then( m => m.ProjectsPageModule)
+    loadChildren: () => import('./_pages/projects/projects.module').then(m => m.ProjectsPageModule)
   },
 ];
 
@@ -72,4 +73,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
