@@ -65,6 +65,11 @@ const routes: Routes = [
     path: 'projects',
     loadChildren: () => import('./_pages/projects/projects.module').then(m => m.ProjectsPageModule)
   },
+  {
+    path: 'chrono',
+    loadChildren: () => import('./_pages/chrono/chrono.module').then(m => m.ChronoPageModule)
+  },
+
 ];
 
 @NgModule({
