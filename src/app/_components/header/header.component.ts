@@ -9,7 +9,12 @@ import { HeaderTitleService } from 'src/app/_services/title/header-title.service
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  public menu_items = [{ menuName: 'Actions', url: '/login', color: 'danger' }, { menuName: 'Users', url: '/home', color: 'secondary' }, { menuName: 'Paramètres', url: '/project', color: 'primary' }];
+  public menu_items = [
+    { menuName: 'Actions', url: '/login', color: 'primary' },
+    { menuName: 'Users', url: '/home', color: 'primary' },
+    { menuName: 'Paramètres', url: '/project', color: 'primary' },
+    { menuName: 'Chrono', url: '/chrono', color: 'primary' }
+  ];
   private headerTitleService = inject(HeaderTitleService);
   public pageTitle$: Observable<string> = this.headerTitleService.title;
   private authService = inject(AuthService);
