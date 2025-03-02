@@ -10,4 +10,8 @@
       <ion-title size="large">chrono</ion-title>
     </ion-toolbar>
   </ion-header>
+<app-create-chrono-form></app-create-chrono-form>
+@if (chronoService.chronos) {
+<app-chrono-list></app-chrono-list>
+}
 </ion-content>

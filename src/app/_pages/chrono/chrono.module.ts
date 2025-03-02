@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ChronoPageRoutingModule } from './chrono-routing.module';
 
 import { ChronoPage } from './chrono.page';
+import { CreateChronoFormComponent } from 'src/app/_components/_chrono/create-chrono-form/create-chrono-form.component';
+import { ChronoListComponent } from 'src/app/_components/_chrono/chrono-list/chrono-list.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ChronoPageRoutingModule
+    ChronoPageRoutingModule,
+    CreateChronoFormComponent,
+    ChronoListComponent,
   ],
   declarations: [ChronoPage]
 })
