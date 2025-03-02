@@ -11,7 +11,9 @@
     </ion-toolbar>
   </ion-header>
 <app-create-chrono-form></app-create-chrono-form>
-@if (chronoService.chronos) {
+@for (chrono of chronoService.chronos; track $index) {
 <app-chrono-list></app-chrono-list>
 }
+@empty {}
+
 </ion-content>
