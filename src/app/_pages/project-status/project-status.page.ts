@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { HeaderTitleService } from 'src/app/_services/header-title.service';
+import { HeaderTitleService } from 'src/app/_services/title/header-title.service';
 
 @Component({
   selector: 'app-project-status',
@@ -9,7 +9,7 @@ import { HeaderTitleService } from 'src/app/_services/header-title.service';
 export class ProjectStatusPage implements OnInit {
   pageTitle: string = 'Project Status';
   headerTitleService = inject(HeaderTitleService);
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.headerTitleService.setTitle(this.pageTitle);

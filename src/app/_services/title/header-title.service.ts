@@ -1,16 +1,18 @@
 import { Injectable, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TitleStrategy } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeaderTitleService {
-  title = new BehaviorSubject('Initial Title');
+  private titleSubject = new BehaviorSubject('Initial Title');
+  public title: Observable<string> = this.titleSubject.asObservable()
   titleService = inject(Title);
+
   setTitle(title: string) {
-    this.title.next(title);
+    this.titleSubject.next(title);
     this.titleService.setTitle(title);
   }
 }

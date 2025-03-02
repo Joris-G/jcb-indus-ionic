@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Action } from '../_interfaces/action.interface';
+import { Action } from '../../_interfaces/action.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ActionService {
-  constructor() {}
+  constructor() { }
 
   getActions(): Observable<Action[]> {
     return new Observable((observer) => {

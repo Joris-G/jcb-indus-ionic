@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { TableColumn } from '@swimlane/ngx-datatable';
 import { Action } from 'src/app/_interfaces/action.interface';
-import { ActionService } from 'src/app/_services/action.service';
-import { HeaderTitleService } from 'src/app/_services/header-title.service';
+import { ActionService } from 'src/app/_services/actions/action.service';
+import { HeaderTitleService } from 'src/app/_services/title/header-title.service';
 
 @Component({
   selector: 'app-action-list',

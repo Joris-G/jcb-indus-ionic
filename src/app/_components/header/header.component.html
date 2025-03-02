@@ -1,8 +1,20 @@
-
 <div mode="md" class="logo" [routerLink]="['/home']">
-  <img src="assets/Images/jcblogo.png" alt="logo">
+  <img src="assets/Images/jcblogo.png" alt="logo" />
 </div>
 
-<ion-item *ngFor="let item of menu_items" [routerLink]="[item.url]" [color]="item.color">
-  {{item.menuName}}
+<ion-item
+  *ngFor="let item of menu_items"
+  [routerLink]="[item.url]"
+  [color]="item.color"
+>
+  {{ item.menuName }}
 </ion-item>
+
+<ion-title>{{ pageTitle$ | async | uppercase }}</ion-title>
+
+<ion-buttons slot="start">
+  <ion-button (click)="logoutClick()">
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    DECONNEXION
+  </ion-button>
+</ion-buttons>
