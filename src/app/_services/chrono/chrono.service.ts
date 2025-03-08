@@ -9,13 +9,16 @@ import { Chrono, ChronoCreation, ChronoList } from 'src/app/_interfaces/chrono.i
 })
 export class ChronoService {
   chronos?:ChronoList
-
+  constructor() {
+    this.syncChronoWithBrowser();
+  }
   createChrono(chrono:ChronoCreation):Observable<Chrono>{
     const newChrono: Chrono = {
-      id : this.setId(),
-      name: chrono.name
-    }
-    this.chronos ? this.chronos.push(newChrono) :this.chronos = [newChrono] ;
+      ...chrono,
+      id: this.setId()
+    };
+    this.chronos ? this.chronos.push(newChrono) : this.chronos = [newChrono];
+    this.saveChronoOnBrowser();
     return of(newChrono);
   }
 
@@ -25,5 +28,13 @@ export class ChronoService {
 
   private setId():number{
     return this.chronos ? this.chronos.length + 1 : 1;
+  }
+
+  private saveChronoOnBrowser() {
+    localStorage.setItem('chronos', JSON.stringify(this.chronos));
+  }
+
+  private syncChronoWithBrowser() {
+    this.chronos = JSON.parse(localStorage.getItem('chronos')!);
   }
 }
