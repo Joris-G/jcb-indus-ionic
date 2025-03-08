@@ -7,6 +7,6 @@ import { ChronoService } from 'src/app/_services/chrono/chrono.service';
   styleUrls: ['./chrono.page.scss'],
 })
 export class ChronoPage {
-  readonly chronoService = inject(ChronoService);
+
 
 }
