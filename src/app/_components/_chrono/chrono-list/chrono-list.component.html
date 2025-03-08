@@ -1,11 +1,11 @@
 <ion-list>
-  @for (chrono of chronoService.chronos; track $index) {
+  @for (chrono of chronoService.$$currentChrono().chronos; track $index) {
   <ion-list>
+    <ion-item button [routerLink]="[$index]">
+      <ion-label>{{chrono.id}}</ion-label>
+    </ion-item>
 
   </ion-list>
-  <ion-item button [routerLink]="[$index]">
-    <ion-label>{{chrono.id}} - {{chrono.name}}</ion-label>
-  </ion-item>
 
   }
   @empty {

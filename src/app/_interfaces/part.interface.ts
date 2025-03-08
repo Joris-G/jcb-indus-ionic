@@ -1,6 +1,6 @@
 export interface Part {
-  partNumber: string;
-  designation: string;
+  partNumber?: string;
+  designation?: string;
 }
 
 export enum Typologie {
