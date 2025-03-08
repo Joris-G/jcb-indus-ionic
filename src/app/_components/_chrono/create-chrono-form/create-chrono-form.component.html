@@ -7,9 +7,49 @@
             <ion-input type="text" placeholder="Nom du projet" label="Projet" formControlName="project" />
         </ion-item>
         <ion-item>
-            <ion-input type="text" placeholder="Part Number" label="Pièce" formControlName="part" />
-            <ion-input type="text" placeholder="Désignation" label="Désignation" formControlName="designation" />
+            <ion-input type="text" placeholder="description ..." label="Description des objectifs du projet"
+                formControlName="goal" />
             </ion-item>
+            <ion-button shape="round" expand="block" fill="clear" block color="primary" (click)="addAChronoClick()">
+                <ion-icon slot="start" name="add"></ion-icon>
+                Nouveau chrono
+            </ion-button>
+            
+            <ion-list formArrayName="chronos">
+                @for (chronoForm of chronos.controls; track chronoIndex; let chronoIndex = $index) {
+            
+                <ion-card>
+                    <ion-item-divider>
+                        <ion-label>Chrono {{chronoIndex + 1}}</ion-label>
+                    </ion-item-divider>
+            
+                    <ion-list formArrayName="parts">
+            
+                        @for (part of getParts(chronoIndex).controls; track partIndex; let partIndex = $index) {
+                        <ion-item-group>
+                            <ion-item>
+                                <ion-input type="text" placeholder="Part Number" label="Pièce"
+                                    [formControl]="getControl(part,'partNumber')" />
+                            </ion-item>
+                            <ion-item>
+                                <ion-input type="text" placeholder="Désignation" label="Désignation"
+                                    [formControl]="getControl(part,'designation')" />
+                            </ion-item>
+                            <ion-item>
+                                <ion-input type="text" placeholder="Entrer un numéro d'OF" label="N° d'OF"
+                                    [formControl]="getControl(part,'workorder')" />
+                            </ion-item>
+                    </ion-item-group>
+                    }
+                    </ion-list>
+                    
+                    <ion-button shape="round" expand="block" fill="clear" block color="primary" (click)="addAPartClick(chronoIndex)">
+                        <ion-icon slot="start" name="add"></ion-icon>
+                        Ajouter une pièce
+                    </ion-button>
+                    </ion-card>
+                    }
+                    </ion-list>
         <ion-button shape="round" expand="block" fill="clear" block color="primary" type="submit"
             [disabled]="createChronoForm.invalid">
             Créer nouveau process
