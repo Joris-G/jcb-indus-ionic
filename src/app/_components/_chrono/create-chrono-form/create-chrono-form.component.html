@@ -1,2 +1,12 @@
-<ion-input type="text" placeholder="Nom du process" label="Process" (ionChange)="newChronoInput()"
-    [(ngModel)]="chronoName"></ion-input>
+<ion-card>
+    <form [formGroup]="createChronoForm" (ngSubmit)="newChronoInput()">
+        <ion-input type="text" placeholder="Nom du process" label="Process" formControlName="name" />
+        <ion-input type="text" placeholder="Nom du projet" label="Projet" formControlName="project" />
+        <ion-input type="text" placeholder="Part Number" label="Pièce" formControlName="part" />
+        <ion-input type="text" placeholder="Désignation" label="Désignation" formControlName="designation" />
+        <ion-button shape="round" expand="block" fill="clear" block color="primary" type="submit"
+            [disabled]="createChronoForm.invalid">
+            Créer nouveau process
+        </ion-button>
+    </form>
+</ion-card>
