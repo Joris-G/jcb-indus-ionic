@@ -1,3 +1,14 @@
-<p>
-  chrono-list works!
-</p>
+<ion-list>
+  @for (chrono of chronoService.chronos; track $index) {
+  <ion-list>
+
+  </ion-list>
+  <ion-item button [routerLink]="[$index]">
+    <ion-label>{{chrono.id}} - {{chrono.name}}</ion-label>
+  </ion-item>
+
+  }
+  @empty {
+  <div class="no-item">Pas de chrono enregistré</div>
+  }
+  </ion-list>
