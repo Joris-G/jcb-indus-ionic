@@ -10,17 +10,8 @@ import { ChronoService } from 'src/app/_services/chrono/chrono.service';
   standalone: true,
   imports: [IonicModule, ReactiveFormsModule]
 })
-export class CreateChronoFormComponent   {
-  getGroup(_t54: AbstractControl<any, any>): FormGroup<any> {
-    return _t54 as FormGroup
-  }
-  test(_t54: AbstractControl<any, any>) {
-    console.log(_t54);
-  }
+export class CreateChronoFormComponent {
 
-  getControl(formGroup: AbstractControl<any, any>, controlName: string): FormControl {
-    return formGroup.get(controlName) as FormControl;
-  }
 
 
   private readonly fb = inject(FormBuilder);
@@ -83,5 +74,13 @@ export class CreateChronoFormComponent   {
     while (formArray.length !== 0) {
       formArray.removeAt(0);
     }
+  }
+
+  getGroup(_t54: AbstractControl<any, any>): FormGroup<any> {
+    return _t54 as FormGroup
+  }
+
+  getControl(formGroup: AbstractControl<any, any>, controlName: string): FormControl {
+    return formGroup.get(controlName) as FormControl;
   }
 }
