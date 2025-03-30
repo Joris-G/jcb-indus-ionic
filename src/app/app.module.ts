@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { provideRouter, RouteReuseStrategy, withComponentInputBinding } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -16,11 +16,13 @@ import { DelayInterceptor } from './_httpInterceptors/delay.interceptor';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {
     provide: HTTP_INTERCEPTORS,
     useClass: DelayInterceptor,
     multi: true
-  }],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -7,9 +7,9 @@
       Formulaire à développer pour ajouter une opération
     </div>
     <ion-list>
-  @for (item of [1,2]; track $index) {
+  @for (chrono of (currentChrono$ | async)?.chronos; track $index) {
     <ion-item>
-      <ion-label>Awesome Label</ion-label>
+      <ion-label>{{chrono.id}}sdsdsdsdsdfsdgfdhdfhdwfg</ion-label>
     </ion-item>
   }
   

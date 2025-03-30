@@ -25,6 +25,17 @@ export class CreateChronoFormComponent {
       goal: ['', Validators.nullValidator],
       chronos: this.fb.array([])
     });
+    this.chronoService.chronoProjectList$.subscribe({
+
+      next: () => {
+        this.createChronoForm.reset();
+        this.clearFormArray(this.chronos);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+
+    })
   }
 
   get chronos(): FormArray {
@@ -58,16 +69,7 @@ export class CreateChronoFormComponent {
 
   newChronoInput() {
     console.log(this.createChronoForm.value);
-    this.chronoService.createChrono(this.createChronoForm.value)
-      .subscribe({
-        next: (value) => {
-          this.createChronoForm.reset();
-          this.clearFormArray(this.chronos);
-        },
-        error: (err) => {
-          console.error(err);
-        }
-      });
+    this.chronoService.addChronoProject(this.createChronoForm.value)
   }
 
   clearFormArray(formArray: FormArray) {

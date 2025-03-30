@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonicModule, IonList } from '@ionic/angular';
@@ -8,10 +9,10 @@ import { ChronoService } from 'src/app/_services/chrono/chrono.service';
   templateUrl: './chrono-list.component.html',
   styleUrls: ['./chrono-list.component.scss'],
   standalone:true,
-  imports: [IonicModule, RouterModule]
+  imports: [IonicModule, RouterModule, AsyncPipe]
 })
 export class ChronoListComponent {
-  readonly chronoService = inject(ChronoService);
-
+  private readonly _chronoService = inject(ChronoService);
+  chronoProjectList$ = this._chronoService.chronoProjectList$;
 
 }

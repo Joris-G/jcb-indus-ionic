@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, provideRouter, RouterModule, Routes, withComponentInputBinding } from '@angular/router';
 import { HomeGuard } from './_guards/home.guard';
 
 const routes: Routes = [
@@ -77,5 +77,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
   exports: [RouterModule],
+  providers: [provideRouter(routes, withComponentInputBinding()),]
 })
 export class AppRoutingModule { }

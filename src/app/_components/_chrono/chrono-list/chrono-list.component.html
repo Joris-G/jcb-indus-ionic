@@ -1,5 +1,5 @@
 <ion-list>
-  @for (chronoProject of chronoService.chronoProjectList; track $index) {
+  @for (chronoProject of chronoProjectList$ | async; track $index) {
   <ion-list>
     <ion-item button [routerLink]="[$index]">
       <ion-label>{{chronoProject.id}} - {{chronoProject.project}} - {{chronoProject.name}}</ion-label>

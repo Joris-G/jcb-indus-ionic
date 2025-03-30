@@ -1,6 +1,6 @@
-import { Injectable, signal, WritableSignal } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Chrono, ChronoCreation, ChronoList, ChronoProject, ChronoProjectCreation, ChronoProjectList } from 'src/app/_interfaces/chrono.interface';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { ChronoCreation, ChronoProject, ChronoProjectCreation, ChronoProjectList } from 'src/app/_interfaces/chrono.interface';
 
 
 
@@ -8,20 +8,21 @@ import { Chrono, ChronoCreation, ChronoList, ChronoProject, ChronoProjectCreatio
   providedIn: 'root'
 })
 export class ChronoService {
-  chronoProjectList?: ChronoProjectList
-  $$currentChrono: WritableSignal<ChronoProjectCreation> = signal(this.initCurrentChronoProject());
+
+  private _chronoProjectList = new BehaviorSubject<ChronoProjectList | []>([]);
+  currentChronoProject: Subject<ChronoProject | undefined> = new Subject();
+
+  get chronoProjectList$(): Observable<ChronoProjectList | []> {
+    return this._chronoProjectList.asObservable();
+  }
+
+
+
 
   constructor() {
     this.syncChronoWithBrowser();
   }
 
-  private initCurrentChronoProject(): ChronoProjectCreation {
-    return {
-      name: "",
-      project: "",
-      chronos: []
-    };
-  }
 
   private initChrono(): ChronoCreation {
     return {
@@ -29,29 +30,42 @@ export class ChronoService {
     };
   }
 
-  createChrono(chrono: ChronoProjectCreation): Observable<ChronoProject> {
+  setCurrentProject(id: number) {
+    this.currentChronoProject.next(this._chronoProjectList.value.find(chronoProject => chronoProject.id === id));
+  }
+
+  // createChrono(chrono: ChronoProjectCreation): Observable<ChronoProject> {
+  //   const newChrono: ChronoProject = {
+  //     ...chrono,
+  //     id: this.setId()
+  //   };
+  //   this.chronoProjectList.next() ? this.chronoProjectList.push(newChrono) : this.chronoProjectList = [newChrono];
+  //   this.saveChronoOnBrowser();
+  //   return of(newChrono);
+  // }
+
+  addChronoProject(newChronoProject: ChronoProjectCreation): void {
     const newChrono: ChronoProject = {
-      ...chrono,
+      ...newChronoProject,
       id: this.setId()
     };
-    this.chronoProjectList ? this.chronoProjectList.push(newChrono) : this.chronoProjectList = [newChrono];
-    this.saveChronoOnBrowser();
-    return of(newChrono);
+    const currentChronoProjects = this._chronoProjectList.getValue();
+    this._chronoProjectList.next([...currentChronoProjects, newChrono]);
   }
 
-  getAllChrono(): Observable<ChronoProjectList> {
-    return of(this.chronoProjectList || []);
-  }
+  // getAllChrono(): Observable<ChronoProjectList> {
+  //   return of(this.chronoProjectList || []);
+  // }
 
   private setId():number{
-    return this.chronoProjectList ? this.chronoProjectList.length + 1 : 1;
+    return this._chronoProjectList.value ?? this._chronoProjectList.value.length + 1 : 1;
   }
 
   private saveChronoOnBrowser() {
-    localStorage.setItem('chronoProjects', JSON.stringify(this.chronoProjectList));
+    localStorage.setItem('chronoProjects', JSON.stringify(this._chronoProjectList.value));
   }
 
   private syncChronoWithBrowser() {
-    this.chronoProjectList = JSON.parse(localStorage.getItem('chronoProjects')!);
+    this._chronoProjectList.next(JSON.parse(localStorage.getItem('chronoProjects')!));
   }
 }
