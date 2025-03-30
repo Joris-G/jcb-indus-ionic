@@ -47,19 +47,20 @@ export class ChronoService {
   addChronoProject(newChronoProject: ChronoProjectCreation): void {
     const newChrono: ChronoProject = {
       ...newChronoProject,
-      id: this.setId()
+      // id: this.setId() 
+      id: 1
     };
     const currentChronoProjects = this._chronoProjectList.getValue();
     this._chronoProjectList.next([...currentChronoProjects, newChrono]);
   }
 
-  // getAllChrono(): Observable<ChronoProjectList> {
-  //   return of(this.chronoProjectList || []);
-  // }
-
-  private setId():number{
-    return this._chronoProjectList.value ?? this._chronoProjectList.value.length + 1 : 1;
+  getChronoProjects(): Observable<ChronoProjectList> {
+    return of(this.chronoProjectList || []);
   }
+
+  // private setId():number{
+  //   return this._chronoProjectList.value ?? this._chronoProjectList.value.length + 1 : 1;
+  // }
 
   private saveChronoOnBrowser() {
     localStorage.setItem('chronoProjects', JSON.stringify(this._chronoProjectList.value));
