@@ -15,26 +15,7 @@ export class ActionPage implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
   private modalCtrl = inject(ModalController);
   actionId!: string;
-  rows: any = [
-    {
-      dateDeCreation: '12/12/23',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem illo possimus architecto a deserunt, similique, explicabo eos earum laudantium minima ratione tempore labore obcaecati magni voluptatem est nostrum dicta id.',
-      commentaire: 'Swimlane',
-    },
-    {
-      dateDeCreation: '12/12/23',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem illo possimus architecto a deserunt, similique, explicabo eos earum laudantium minima ratione tempore labore obcaecati magni voluptatem est nostrum dicta id.',
-      commentaire: 'KFC',
-    },
-    {
-      dateDeCreation: '12/12/23',
-      description:
-        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem illo possimus architecto a deserunt, similique, explicabo eos earum laudantium minima ratione tempore labore obcaecati magni voluptatem est nostrum dicta id.',
-      commentaire: 'Burger King',
-    },
-  ];
+  rows: any = [  ];
   columns = [
     { name: 'Date de creation' },
     // { name: 'Description' },

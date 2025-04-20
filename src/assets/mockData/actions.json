@@ -1,0 +1,644 @@
+[
+    {
+      "description": "Réaliser une étude des matériaux composites pour la pièce A, en tenant compte des contraintes mécaniques.",
+      "idUser": 3,
+      "dateBesoin": "2024-05-15",
+      "idProjet": 1
+    },
+    {
+      "description": "Préparer un prototype de la pièce B en carbone pour tests de résistance.",
+      "idUser": 7,
+      "dateBesoin": "2024-06-02",
+      "idProjet": 2
+    },
+    {
+      "description": "Analyser les résultats des essais de fatigue sur les assemblages rivetés.",
+      "idUser": 12,
+      "dateBesoin": "2024-05-20",
+      "idProjet": 3
+    },
+    {
+      "description": "Optimiser le processus de stratification pour réduire les coûts de production.",
+      "idUser": 5,
+      "dateBesoin": "2024-06-10",
+      "idProjet": 1
+    },
+    {
+      "description": "Valider les spécifications techniques avec le client pour le projet X.",
+      "idUser": 8,
+      "dateBesoin": "2024-05-25",
+      "idProjet": 4
+    },
+    {
+      "description": "Commander les matières premières pour la fabrication des pièces composites.",
+      "idUser": 15,
+      "dateBesoin": "2024-06-05",
+      "idProjet": 5
+    },
+    {
+      "description": "Former les opérateurs sur les nouvelles machines de rivetage.",
+      "idUser": 10,
+      "dateBesoin": "2024-05-30",
+      "idProjet": 6
+    },
+    {
+      "description": "Réaliser un audit qualité sur les pièces produites la semaine dernière.",
+      "idUser": 4,
+      "dateBesoin": "2024-06-12",
+      "idProjet": 2
+    },
+    {
+      "description": "Simuler le comportement aérodynamique de l'ensemble riveté Y.",
+      "idUser": 9,
+      "dateBesoin": "2024-06-08",
+      "idProjet": 7
+    },
+    {
+      "description": "Mettre à jour la documentation technique pour le projet Z.",
+      "idUser": 11,
+      "dateBesoin": "2024-05-28",
+      "idProjet": 8
+    },
+    {
+      "description": "Planifier la maintenance préventive des presses hydrauliques.",
+      "idUser": 6,
+      "dateBesoin": "2024-06-15",
+      "idProjet": 9
+    },
+    {
+      "description": "Évaluer les fournisseurs de résine époxy pour améliorer la qualité.",
+      "idUser": 14,
+      "dateBesoin": "2024-06-01",
+      "idProjet": 10
+    },
+    {
+      "description": "Concevoir un nouveau moule pour la pièce composite C.",
+      "idUser": 2,
+      "dateBesoin": "2024-06-20",
+      "idProjet": 11
+    },
+    {
+      "description": "Analyser les retours clients sur les derniers lots livrés.",
+      "idUser": 16,
+      "dateBesoin": "2024-06-03",
+      "idProjet": 12
+    },
+    {
+      "description": "Automatiser une partie du processus de rivetage pour gagner en efficacité.",
+      "idUser": 1,
+      "dateBesoin": "2024-06-18",
+      "idProjet": 13
+    },
+    {
+      "description": "Réaliser des tests de corrosion sur les pièces en composite.",
+      "idUser": 17,
+      "dateBesoin": "2024-06-22",
+      "idProjet": 14
+    },
+    {
+      "description": "Préparer une revue de projet avec l'équipe pour faire le point sur les délais.",
+      "idUser": 19,
+      "dateBesoin": "2024-06-25",
+      "idProjet": 15
+    },
+    {
+      "description": "Définir les paramètres de cuisson optimaux pour les pièces en carbone.",
+      "idUser": 3,
+      "dateBesoin": "2024-06-07",
+      "idProjet": 1
+    },
+    {
+      "description": "Contrôler la conformité des rivets utilisés dans l'assemblage final.",
+      "idUser": 7,
+      "dateBesoin": "2024-06-09",
+      "idProjet": 2
+    },
+    {
+      "description": "Mettre en place un nouveau protocole de test pour les composites.",
+      "idUser": 12,
+      "dateBesoin": "2024-06-11",
+      "idProjet": 3
+    },
+    {
+      "description": "Réviser les plans de fabrication pour intégrer les modifications client.",
+      "idUser": 5,
+      "dateBesoin": "2024-06-14",
+      "idProjet": 4
+    },
+    {
+      "description": "Organiser une démonstration client pour valider le prototype final.",
+      "idUser": 8,
+      "dateBesoin": "2024-06-16",
+      "idProjet": 5
+    },
+    {
+      "description": "Optimiser l'empaquetage des pièces pour réduire les coûts logistiques.",
+      "idUser": 15,
+      "dateBesoin": "2024-06-17",
+      "idProjet": 6
+    },
+    {
+      "description": "Former une nouvelle équipe sur les techniques de stratification.",
+      "idUser": 10,
+      "dateBesoin": "2024-06-19",
+      "idProjet": 7
+    },
+    {
+      "description": "Analyser les causes d'un défaut récurrent sur les pièces usinées.",
+      "idUser": 4,
+      "dateBesoin": "2024-06-21",
+      "idProjet": 8
+    },
+    {
+      "description": "Évaluer l'impact d'un changement de fournisseur de fibres de carbone.",
+      "idUser": 9,
+      "dateBesoin": "2024-06-23",
+      "idProjet": 9
+    },
+    {
+      "description": "Préparer un rapport d'avancement pour la direction.",
+      "idUser": 11,
+      "dateBesoin": "2024-06-24",
+      "idProjet": 10
+    },
+    {
+      "description": "Réaliser une étude comparative entre deux types de résines.",
+      "idUser": 6,
+      "dateBesoin": "2024-06-26",
+      "idProjet": 11
+    },
+    {
+      "description": "Planifier les ressources humaines pour le pic de production en juillet.",
+      "idUser": 14,
+      "dateBesoin": "2024-06-27",
+      "idProjet": 12
+    },
+    {
+      "description": "Mettre à jour les fiches de sécurité pour les nouveaux produits chimiques.",
+      "idUser": 2,
+      "dateBesoin": "2024-06-28",
+      "idProjet": 13
+    },
+    {
+      "description": "Valider les procédures de contrôle qualité avec l'équipe.",
+      "idUser": 16,
+      "dateBesoin": "2024-06-29",
+      "idProjet": 14
+    },
+    {
+      "description": "Réaliser un benchmark des machines de découpe laser disponibles.",
+      "idUser": 1,
+      "dateBesoin": "2024-06-30",
+      "idProjet": 15
+    },
+    {
+      "description": "Corriger les anomalies détectées lors du dernier audit interne.",
+      "idUser": 17,
+      "dateBesoin": "2024-07-01",
+      "idProjet": 1
+    },
+    {
+      "description": "Préparer une présentation pour un appel d'offres important.",
+      "idUser": 19,
+      "dateBesoin": "2024-07-02",
+      "idProjet": 2
+    },
+    {
+      "description": "Tester un nouveau revêtement anti-usure pour les pièces composites.",
+      "idUser": 3,
+      "dateBesoin": "2024-07-03",
+      "idProjet": 3
+    },
+    {
+      "description": "Réorganiser l'atelier pour améliorer le flux de production.",
+      "idUser": 7,
+      "dateBesoin": "2024-07-04",
+      "idProjet": 4
+    },
+    {
+      "description": "Former les opérateurs à l'utilisation d'un nouveau logiciel de CAO.",
+      "idUser": 12,
+      "dateBesoin": "2024-07-05",
+      "idProjet": 5
+    },
+    {
+      "description": "Évaluer la faisabilité d'intégrer un nouveau type de rivet.",
+      "idUser": 5,
+      "dateBesoin": "2024-07-06",
+      "idProjet": 6
+    },
+    {
+      "description": "Planifier les tests de vibration sur les assemblages critiques.",
+      "idUser": 8,
+      "dateBesoin": "2024-07-07",
+      "idProjet": 7
+    },
+    {
+      "description": "Mettre en place un système de traçabilité pour les matières premières.",
+      "idUser": 15,
+      "dateBesoin": "2024-07-08",
+      "idProjet": 8
+    },
+    {
+      "description": "Analyser les retours des équipes de production sur les nouveaux outils.",
+      "idUser": 10,
+      "dateBesoin": "2024-07-09",
+      "idProjet": 9
+    },
+    {
+      "description": "Réaliser une étude de marché pour de nouveaux composites.",
+      "idUser": 4,
+      "dateBesoin": "2024-07-10",
+      "idProjet": 10
+    },
+    {
+      "description": "Optimiser les paramètres de coupe pour réduire les rebuts.",
+      "idUser": 9,
+      "dateBesoin": "2024-07-11",
+      "idProjet": 11
+    },
+    {
+      "description": "Préparer une démonstration technique pour un client potentiel.",
+      "idUser": 11,
+      "dateBesoin": "2024-07-12",
+      "idProjet": 12
+    },
+    {
+      "description": "Valider les nouveaux gabarits de montage avec l'équipe qualité.",
+      "idUser": 6,
+      "dateBesoin": "2024-07-13",
+      "idProjet": 13
+    },
+    {
+      "description": "Réaliser un bilan des consommations énergétiques de l'atelier.",
+      "idUser": 14,
+      "dateBesoin": "2024-07-14",
+      "idProjet": 14
+    },
+    {
+      "description": "Mettre à jour les procédures de sécurité pour les opérations de rivetage.",
+      "idUser": 2,
+      "dateBesoin": "2024-07-15",
+      "idProjet": 15
+    },
+    {
+      "description": "Planifier une campagne de tests en conditions extrêmes.",
+      "idUser": 16,
+      "dateBesoin": "2024-07-16",
+      "idProjet": 1
+    },
+    {
+      "description": "Former les nouveaux employés aux normes de qualité en vigueur.",
+      "idUser": 1,
+      "dateBesoin": "2024-07-17",
+      "idProjet": 2
+    },
+    {
+      "description": "Analyser les données de production pour identifier des goulots d'étranglement.",
+      "idUser": 17,
+      "dateBesoin": "2024-07-18",
+      "idProjet": 3
+    },
+    {
+      "description": "Réaliser un prototype d'une nouvelle pièce composite légère.",
+      "idUser": 19,
+      "dateBesoin": "2024-07-19",
+      "idProjet": 4
+    },
+    {
+      "description": "Évaluer l'impact d'une modification de process sur les coûts.",
+      "idUser": 3,
+      "dateBesoin": "2024-07-20",
+      "idProjet": 5
+    },
+    {
+      "description": "Préparer une documentation technique pour une certification.",
+      "idUser": 7,
+      "dateBesoin": "2024-07-21",
+      "idProjet": 6
+    },
+    {
+      "description": "Contrôler la qualité des rivets reçus du fournisseur.",
+      "idUser": 12,
+      "dateBesoin": "2024-07-22",
+      "idProjet": 7
+    },
+    {
+      "description": "Optimiser le temps de cycle sur une machine critique.",
+      "idUser": 5,
+      "dateBesoin": "2024-07-23",
+      "idProjet": 8
+    },
+    {
+      "description": "Réaliser une analyse des risques pour un nouveau projet.",
+      "idUser": 8,
+      "dateBesoin": "2024-07-24",
+      "idProjet": 9
+    },
+    {
+      "description": "Mettre en place un nouveau système de gestion des stocks.",
+      "idUser": 15,
+      "dateBesoin": "2024-07-25",
+      "idProjet": 10
+    },
+    {
+      "description": "Former les opérateurs à une nouvelle technique de stratification.",
+      "idUser": 10,
+      "dateBesoin": "2024-07-26",
+      "idProjet": 11
+    },
+    {
+      "description": "Valider les performances d'un nouveau type de colle structurelle.",
+      "idUser": 4,
+      "dateBesoin": "2024-07-27",
+      "idProjet": 12
+    },
+    {
+      "description": "Réaliser une étude ergonomique des postes de travail.",
+      "idUser": 9,
+      "dateBesoin": "2024-07-28",
+      "idProjet": 13
+    },
+    {
+      "description": "Préparer un plan de formation pour les compétences futures.",
+      "idUser": 11,
+      "dateBesoin": "2024-07-29",
+      "idProjet": 14
+    },
+    {
+      "description": "Analyser les retours clients sur les dernières livraisons.",
+      "idUser": 6,
+      "dateBesoin": "2024-07-30",
+      "idProjet": 15
+    },
+    {
+      "description": "Optimiser les paramètres de cuisson pour réduire les défauts.",
+      "idUser": 14,
+      "dateBesoin": "2024-07-31",
+      "idProjet": 1
+    },
+    {
+      "description": "Mettre à jour les fiches techniques des produits finis.",
+      "idUser": 2,
+      "dateBesoin": "2024-08-01",
+      "idProjet": 2
+    },
+    {
+      "description": "Planifier une maintenance corrective sur une presse hydraulique.",
+      "idUser": 16,
+      "dateBesoin": "2024-08-02",
+      "idProjet": 3
+    },
+    {
+      "description": "Réaliser un test de résistance sur un nouvel assemblage riveté.",
+      "idUser": 1,
+      "dateBesoin": "2024-08-03",
+      "idProjet": 4
+    },
+    {
+      "description": "Évaluer les performances d'un nouveau fournisseur de composites.",
+      "idUser": 17,
+      "dateBesoin": "2024-08-04",
+      "idProjet": 5
+    },
+    {
+      "description": "Préparer une revue de projet avec les parties prenantes.",
+      "idUser": 19,
+      "dateBesoin": "2024-08-05",
+      "idProjet": 6
+    },
+    {
+      "description": "Optimiser l'organisation des postes de travail en atelier.",
+      "idUser": 3,
+      "dateBesoin": "2024-08-06",
+      "idProjet": 7
+    },
+    {
+      "description": "Valider les nouveaux paramètres de découpe laser.",
+      "idUser": 7,
+      "dateBesoin": "2024-08-07",
+      "idProjet": 8
+    },
+    {
+      "description": "Réaliser une étude sur l'impact environnemental des processus.",
+      "idUser": 12,
+      "dateBesoin": "2024-08-08",
+      "idProjet": 9
+    },
+    {
+      "description": "Former les équipes à l'utilisation d'un nouveau logiciel de gestion.",
+      "idUser": 5,
+      "dateBesoin": "2024-08-09",
+      "idProjet": 10
+    },
+    {
+      "description": "Analyser les causes d'une augmentation des rebuts en production.",
+      "idUser": 8,
+      "dateBesoin": "2024-08-10",
+      "idProjet": 11
+    },
+    {
+      "description": "Mettre en place un nouveau protocole de contrôle qualité.",
+      "idUser": 15,
+      "dateBesoin": "2024-08-11",
+      "idProjet": 12
+    },
+    {
+      "description": "Optimiser les cycles de production pour réduire les délais.",
+      "idUser": 10,
+      "dateBesoin": "2024-08-12",
+      "idProjet": 13
+    },
+    {
+      "description": "Valider les performances d'un nouveau type de fibre de verre.",
+      "idUser": 4,
+      "dateBesoin": "2024-08-13",
+      "idProjet": 14
+    },
+    {
+      "description": "Préparer une documentation pour une certification ISO.",
+      "idUser": 9,
+      "dateBesoin": "2024-08-14",
+      "idProjet": 15
+    },
+    {
+      "description": "Réaliser une analyse coûts-bénéfices pour un nouvel équipement.",
+      "idUser": 11,
+      "dateBesoin": "2024-08-15",
+      "idProjet": 1
+    },
+    {
+      "description": "Planifier une campagne de tests en environnement réel.",
+      "idUser": 6,
+      "dateBesoin": "2024-08-16",
+      "idProjet": 2
+    },
+    {
+      "description": "Former les opérateurs à une nouvelle technique de rivetage.",
+      "idUser": 14,
+      "dateBesoin": "2024-08-17",
+      "idProjet": 3
+    },
+    {
+      "description": "Valider les spécifications techniques avec l'équipe R&D.",
+      "idUser": 2,
+      "dateBesoin": "2024-08-18",
+      "idProjet": 4
+    },
+    {
+      "description": "Réaliser un audit des processus de fabrication.",
+      "idUser": 16,
+      "dateBesoin": "2024-08-19",
+      "idProjet": 5
+    },
+    {
+      "description": "Optimiser les paramètres de polymérisation des composites.",
+      "idUser": 1,
+      "dateBesoin": "2024-08-20",
+      "idProjet": 6
+    },
+    {
+      "description": "Mettre à jour les procédures de sécurité pour l'atelier.",
+      "idUser": 17,
+      "dateBesoin": "2024-08-21",
+      "idProjet": 7
+    },
+    {
+      "description": "Préparer une présentation pour un salon industriel.",
+      "idUser": 19,
+      "dateBesoin": "2024-08-22",
+      "idProjet": 8
+    },
+    {
+      "description": "Analyser les tendances du marché des matériaux composites.",
+      "idUser": 3,
+      "dateBesoin": "2024-08-23",
+      "idProjet": 9
+    },
+    {
+      "description": "Valider les nouveaux outils de production avec l'équipe.",
+      "idUser": 7,
+      "dateBesoin": "2024-08-24",
+      "idProjet": 10
+    },
+    {
+      "description": "Réaliser un test d'étanchéité sur les assemblages rivetés.",
+      "idUser": 12,
+      "dateBesoin": "2024-08-25",
+      "idProjet": 11
+    },
+    {
+      "description": "Optimiser la gestion des déchets de production.",
+      "idUser": 5,
+      "dateBesoin": "2024-08-26",
+      "idProjet": 12
+    },
+    {
+      "description": "Former les équipes à la lecture des plans techniques.",
+      "idUser": 8,
+      "dateBesoin": "2024-08-27",
+      "idProjet": 13
+    },
+    {
+      "description": "Valider les performances d'un nouveau revêtement protecteur.",
+      "idUser": 15,
+      "dateBesoin": "2024-08-28",
+      "idProjet": 14
+    },
+    {
+      "description": "Préparer un rapport d'analyse des coûts de production.",
+      "idUser": 10,
+      "dateBesoin": "2024-08-29",
+      "idProjet": 15
+    },
+    {
+      "description": "Réaliser une étude sur l'amélioration de la productivité.",
+      "idUser": 4,
+      "dateBesoin": "2024-08-30",
+      "idProjet": 1
+    },
+    {
+      "description": "Planifier une revue de projet avec les fournisseurs clés.",
+      "idUser": 9,
+      "dateBesoin": "2024-08-31",
+      "idProjet": 2
+    },
+    {
+      "description": "Optimiser les paramètres de soudage des composites.",
+      "idUser": 11,
+      "dateBesoin": "2024-09-01",
+      "idProjet": 3
+    },
+    {
+      "description": "Valider les nouveaux processus avec l'équipe qualité.",
+      "idUser": 6,
+      "dateBesoin": "2024-09-02",
+      "idProjet": 4
+    },
+    {
+      "description": "Réaliser un test de vieillissement accéléré sur les pièces.",
+      "idUser": 14,
+      "dateBesoin": "2024-09-03",
+      "idProjet": 5
+    },
+    {
+      "description": "Mettre à jour les dossiers techniques des produits.",
+      "idUser": 2,
+      "dateBesoin": "2024-09-04",
+      "idProjet": 6
+    },
+    {
+      "description": "Préparer une démonstration pour un client international.",
+      "idUser": 16,
+      "dateBesoin": "2024-09-05",
+      "idProjet": 7
+    },
+    {
+      "description": "Analyser les retours des opérateurs sur les nouveaux équipements.",
+      "idUser": 1,
+      "dateBesoin": "2024-09-06",
+      "idProjet": 8
+    },
+    {
+      "description": "Optimiser l'organisation des flux matières en atelier.",
+      "idUser": 17,
+      "dateBesoin": "2024-09-07",
+      "idProjet": 9
+    },
+    {
+      "description": "Valider les performances mécaniques d'un nouvel assemblage.",
+      "idUser": 19,
+      "dateBesoin": "2024-09-08",
+      "idProjet": 10
+    },
+    {
+      "description": "Réaliser une étude sur l'impact des nouveaux processus sur les délais.",
+      "idUser": 3,
+      "dateBesoin": "2024-09-09",
+      "idProjet": 11
+    },
+    {
+      "description": "Planifier une campagne de tests en conditions réelles.",
+      "idUser": 7,
+      "dateBesoin": "2024-09-10",
+      "idProjet": 12
+    },
+    {
+      "description": "Former les équipes aux nouvelles normes de sécurité.",
+      "idUser": 12,
+      "dateBesoin": "2024-09-11",
+      "idProjet": 13
+    },
+    {
+      "description": "Valider les spécifications avec le bureau d'études.",
+      "idUser": 5,
+      "dateBesoin": "2024-09-12",
+      "idProjet": 14
+    },
+    {
+      "description": "Réaliser un audit des performances des fournisseurs.",
+      "idUser": 8,
+      "dateBesoin": "2024-09-13",
+      "idProjet": 15
+    }
+  ]
