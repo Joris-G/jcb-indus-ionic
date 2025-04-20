@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
 import { catchError, delay, mergeMap, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,33 +21,29 @@ export class AuthService {
     this.checkTokenExpiration();
   }
 
-  login(username: string, password: string): Observable<any> {
+  login(email: string, password: string): Observable<any> {
     this.isInLogginProcessSubject.next(true);
-    return this.http.post<any>('votre/api/login', { username, password }).pipe(
-      tap(response => {
-        if (response && response.token) {
-          localStorage.setItem('token', response.token);
-          this.loggedInSubject.next(true);
-          this.startTokenExpirationTimer();
-        }
+    return this.http.post<any>(`${environment.apiUrl}/auth/login`, { email, password }, { withCredentials: true }).pipe(
+      tap(() => {
+        this.loggedInSubject.next(true);
+        this.startTokenExpirationTimer();
         this.isInLogginProcessSubject.next(false);
       }),
       catchError((error: HttpErrorResponse) => {
         // Arrêter le loader en cas d'erreur
         this.isInLogginProcessSubject.next(false);
-        if (error.status === 401) { // Si erreur d'authentification
-          this.logout(); // Déconnecter l'utilisateur
-        }
+        if (error.status === 401) this.logout(); // Déconnecter l'utilisateur
         throw 'Une erreur est survenue. Veuillez réessayer.';
       })
     );
   }
 
   logout(): void {
-    localStorage.removeItem('token');
-    this.loggedInSubject.next(false);
-    this.stopTokenExpirationTimer();
-    this.router.navigate(['/login']);
+    this.http.post(`${environment.apiUrl}/auth/logout`, {}, { withCredentials: true }).subscribe(() => {
+      this.loggedInSubject.next(false);
+      this.stopTokenExpirationTimer();
+      this.router.navigate(['/login']);
+    });
   }
 
   getToken(): string | null {

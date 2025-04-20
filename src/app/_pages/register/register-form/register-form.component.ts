@@ -28,15 +28,6 @@ export class RegisterFormComponent {
     });
   }
 
-  onChangeName(ev: any) {
-    const inputName = ev.detail.value
-    console.log("nom changé", inputName);
-    if (inputName == 'toto') {
-
-    } else {
-      this.isNameError = true;
-    }
-  }
   onRegisterClick() {
     const user = this.registerForm.value
     if (user) {

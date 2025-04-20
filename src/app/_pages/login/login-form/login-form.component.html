@@ -1,15 +1,19 @@
-<!-- Faire un formulaire pour le login 
-  #Username = email pour le moment 
-  #password
-
-J'ai déjà écris la méthode onLoginClick qui sera la méthode onSubmit du
-formulaire 
-
-bouton de connexion 
-
-Afficher une erreur en cas de retour d'erreur du serveur
-
-Bonus : ajouter un petit spinner au bouton en
-attendant que la connextion se fasse -->
-
-Formulaire Login
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Email -->
+    <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" autocomplete="on" type="email"></ion-input>
+    </ion-item>
+    <!-- Password -->
+    <ion-item>
+        <ion-label position="floating">Mot de passe</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="passwordError()">
+        <p class="ion-padding-start">Email ou Mot de passe incorrect(s)</p>
+    </ion-text>
+    <!-- Submit Button -->
+    <ion-button expand="block" type="submit" [disabled]="form.invalid" class="ion-margin-top">
+        Connexion
+    </ion-button>
+</form>

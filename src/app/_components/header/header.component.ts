@@ -10,9 +10,9 @@ import { HeaderTitleService } from 'src/app/_services/title/header-title.service
 })
 export class HeaderComponent {
   public menu_items = [
-    { menuName: 'Actions', url: '/login', color: 'primary' },
-    { menuName: 'Users', url: '/home', color: 'primary' },
-    { menuName: 'Paramètres', url: '/project', color: 'primary' },
+    { menuName: 'Actions', url: '/action-list', color: 'primary' },
+    { menuName: 'Users', url: '/users', color: 'primary' },
+    { menuName: 'Projets', url: '/projects', color: 'primary' },
     { menuName: 'Chrono', url: '/chrono', color: 'primary' }
   ];
   private headerTitleService = inject(HeaderTitleService);

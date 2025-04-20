@@ -1,5 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, inject, signal } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/authentication/auth.service';
 
 @Component({
@@ -8,21 +9,38 @@ import { AuthService } from 'src/app/_services/authentication/auth.service';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent {
+  private fb = inject(FormBuilder);
   private authService = inject(AuthService);
-  public isLoading$: Observable<boolean> = this.authService.isInLogginProcess$;
+  private router = inject(Router);
 
-  onLoginClick() {
+  form = this.fb.group({
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
+  passwordError = signal<boolean>(false);
 
-    this.authService.login('joris.grangier@amacaerospace.com', 'test')
-      .subscribe({
-        next(value) {
-          // Ce qu'il se passe quand un reçoit une réponse positive. Ou négative mais maitrisé par le serveur par exemple un compte expiré  ou autre
-        },
-        error(err) {
-          // ce qu'il se passe lorsqu'une erreur inconnue survient
-          console.error(err);
-        },
-      });
+
+  async onSubmit() {
+    if (this.form.invalid) return;
+
+    const { email, password } = this.form.value;
+    this.authService.login(email!, password!)
+      .subscribe(
+        {
+          next: () => { this.router.navigate(['home']); },
+          error: (err) => {
+            this.passwordError.set(true);
+          }
+        }
+      );
+  }
+
+  get emailControl() {
+    return this.form.get('email');
+  }
+
+  get passwordControl() {
+    return this.form.get('password');
   }
 
 

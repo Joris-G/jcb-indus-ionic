@@ -21,7 +21,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'project',
+    path: 'projects',
     title: 'PROJET',
     loadChildren: () =>
       import('./_pages/project/project.module').then(
@@ -38,7 +38,6 @@ const routes: Routes = [
   {
     path: 'home',
     canActivate: [HomeGuard],
-
     loadChildren: () =>
       import('./_pages/home/home.module').then((m) => m.HomePageModule),
   },
