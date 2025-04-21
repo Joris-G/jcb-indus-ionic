@@ -25,7 +25,22 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-@import "/node_modules/@swimlane/ngx-datatable/index.scss";
-// @import "~@swimlane/ngx-datatable/release/index.css";
-// @import "~@swimlane/ngx-datatable/release/index.css";
-// @import "~@swimlane/ngx-datatable/release/index.css";
+// @import "/node_modules/@swimlane/ngx-datatable/index.scss";
+// @import '~@swimlane/ngx-datatable/index.css';
+// @import '~@swimlane/ngx-datatable/themes/material.scss';
+// @import '~@swimlane/ngx-datatable/assets/icons.css';
+
+html {
+    font-size: 9px; // ou même 13px, selon ton besoin (par défaut c'est souvent 16px)
+  }
+
+  ion-toolbar {
+    --min-height: var(--toolbar-min-height);
+  }
+
+  .datatable-header-cell-label{
+    font-size: 1.1rem;
+  }
+  .datatable-body-cell-label{
+    font-size: 1rem;
+  }

@@ -74,6 +74,27 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+
+  --ion-font-size-base: 0.875rem; // 14px si 1rem = 16px
+  --ion-font-size-small: 0.75rem;
+  --ion-font-size-large: 1rem;
+
+  // Réduire aussi les paddings/margins
+  --ion-item-padding: 8px;
+  --ion-item-margin: 8px;
+
+  // Boutons
+  --ion-button-padding-start: 8px;
+  --ion-button-padding-end: 8px;
+  --ion-button-padding-top: 6px;
+  --ion-button-padding-bottom: 6px;
+
+  // Icones
+  --ion-icon-size: 1rem;
+
+  --toolbar-min-height: 3.5rem;
+
 }
 
 @media (prefers-color-scheme: dark) {
