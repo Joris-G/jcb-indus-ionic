@@ -16,7 +16,7 @@ export class DelayInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    return timer(3000).pipe(
+    return timer(1000).pipe(
       mergeMap(() => next.handle(request)))
   }
 }
