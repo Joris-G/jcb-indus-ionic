@@ -1,20 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="refreshData()">
+        <ion-icon name="refresh-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title size="large">{{pageTitle}}</ion-title>
+  </ion-toolbar>
+
+</ion-header>
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">{{pageTitle}}</ion-title>
     </ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="refreshData()">
+        <ion-icon name="refresh-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-header>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Action List Table</ion-card-title>
+      <ion-card-subtitle>Projet : F10X - VOILURES</ion-card-subtitle>
+      <ion-card-title>Liste des actions</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ngx-datatable
-        [rows]="actionsRows"
+      @if(isLoading){
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Chargement des actions...</p>
+      }
+      @else if (isError) {
+      <ion-text color="danger">
+        <p>Une erreur est survenue lors du chargement des données.</p>
+      </ion-text>
+      }
+      @else if (actionsRows.length === 0) {
+      <ion-text color="medium">
+        <p>Aucune action à afficher pour le moment.</p>
+      </ion-text>
+      }
+      @else(){
+        <ngx-datatable
+      *ngIf="!isLoading && !isError && actionsRows.length > 0"
+      class="material"  
+      [rows]="actionsRows"
         [columns]="columns"
-        (activate)="onRowClick($event)"
-      >
+  [selectionType]="SelectionType.multiClick"
+  [selectAllRowsOnPage]="false"
+  [displayCheck]="allowSelection"
+  [selectCheck]="allowSelection"
+  (select)="onRowSelect($event)"
+  >
+        <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+          <ng-template ngx-datatable-header-template let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+            <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn()" />
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+            let-onCheckboxChangeFn="onCheckboxChangeFn">
+            <input type="checkbox" />
+          </ng-template>
+        </ngx-datatable-column>
         <ngx-datatable-column name="Statut" prop="status">
           <!-- <ng-template ngx-datatable-header-template>
             {{ col.name }}
@@ -31,7 +80,7 @@
             {{ value }}
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column name="Titre" prop="title">
+        <ngx-datatable-column name="Titre" prop="title" [sortable]="true">
           <!-- <ng-template ngx-datatable-header-template>
             {{ col.name }}
         </ng-template> -->
@@ -52,7 +101,7 @@
             {{ col.name }}
         </ng-template> -->
           <ng-template let-value="value" ngx-datatable-cell-template>
-            {{ value }}
+            {{ value | date : "dd/MM/yyyy" }}
           </ng-template>
         </ngx-datatable-column>
 
@@ -65,6 +114,7 @@
           </ng-template>
         </ngx-datatable-column>
       </ngx-datatable>
+      }
     </ion-card-content>
   </ion-card>
 </ion-content>

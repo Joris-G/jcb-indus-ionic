@@ -1,0 +1,24 @@
+ion-text {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+  
+  ion-spinner {
+    display: block;
+    margin: 2rem auto;
+  }
+
+  .icon {
+    position: absolute;
+  }
+  .datatable-icon-down {
+    top: 0px;
+  }
+  .datatable-icon-up {
+    top: 40px;
+  }
+  .dragFromLeft .icon {
+    left: -13px;
+  }

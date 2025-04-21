@@ -5,6 +5,10 @@ export interface Action {
   title: string;
   needDate: string;
   creationDate: string;
-  responsable: string;
+  // responsable: User;
   project: string;
+  type: string;
+  theme: string;
+  // author: User;
+  // contributors: User[];
 }

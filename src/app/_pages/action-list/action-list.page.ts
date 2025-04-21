@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { TableColumn } from '@swimlane/ngx-datatable';
+import { ColumnMode, SelectionType, TableColumn } from '@swimlane/ngx-datatable';
 import { Action } from 'src/app/_interfaces/action.interface';
 import { ActionService } from 'src/app/_services/actions/action.service';
 import { HeaderTitleService } from 'src/app/_services/title/header-title.service';
@@ -10,9 +10,16 @@ import { HeaderTitleService } from 'src/app/_services/title/header-title.service
   styleUrls: ['./action-list.page.scss'],
 })
 export class ActionListPage implements OnInit {
+  isLoading = true;
+  isError = false;
+  selected: Action[] = [];
+
+
   pageTitle: string = 'Action List';
   headerTitleService = inject(HeaderTitleService);
   actionService = inject(ActionService);
+
+  SelectionType = SelectionType;
   actionsRows: Action[] = [];
   columns: TableColumn[] = [
     { name: 'Statut', prop: 'status', sortable: true },
@@ -25,16 +32,37 @@ export class ActionListPage implements OnInit {
 
   ngOnInit() {
     this.headerTitleService.setTitle(this.pageTitle);
+    this.loadActions();
+
+  }
+  private loadActions(onComplete?: () => void) {
     this.actionService.getActions().subscribe({
       next: (actions) => {
         this.actionsRows = [...actions];
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error('Erreur lors de la récupération des actions :', err);
+        this.isError = true;
+        this.isLoading = false;
       },
     });
   }
+  ColumnMode = ColumnMode;
 
-  onRowClick(event: any) {
-    if (event.type == 'click') {
-      console.log(event.row);
-    }
+  refreshData() {
+    this.loadActions();
+  }
+
+  handleRefresh(event: any) {
+    this.loadActions(() => event.target.complete());
+  }
+
+  onRowSelect(event: Action) {
+    console.log(this.selected = [...this.selected, event]);
+  }
+
+  allowSelection(row: Action) {
+    return row.createdBy !== 'Beryl Rice';
   }
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
@@ -8,6 +8,7 @@ import { ActionListPageRoutingModule } from './action-list-routing.module';
 
 import { ActionListPage } from './action-list.page';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ActionService } from 'src/app/_services/actions/action.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     IonicModule,
     NgxDatatableModule,
     ActionListPageRoutingModule,
+    DatePipe
   ],
+  providers: [ActionService],
   declarations: [ActionListPage],
 })
 export class ActionListPageModule {}
