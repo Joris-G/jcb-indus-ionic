@@ -15,6 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'action-list',
+    title: 'LISTE DES ACTIONS',
     loadChildren: () =>
       import('./_pages/action-list/action-list.module').then(
         (m) => m.ActionListPageModule
