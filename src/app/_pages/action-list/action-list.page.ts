@@ -1,5 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { ColumnMode, SelectionType, TableColumn } from '@swimlane/ngx-datatable';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { ColumnMode, DatatableComponent, SelectionType, TableColumn } from '@swimlane/ngx-datatable';
 import { Action } from 'src/app/_interfaces/action.interface';
 import { ActionService } from 'src/app/_services/actions/action.service';
 import { HeaderTitleService } from 'src/app/_services/title/header-title.service';
@@ -10,6 +10,19 @@ import { HeaderTitleService } from 'src/app/_services/title/header-title.service
   styleUrls: ['./action-list.page.scss'],
 })
 export class ActionListPage implements OnInit {
+  statusChange(_action: any, _newValue: any) {
+    _action.status = _newValue;
+    this.actionService.update(_action.id, _action)
+      .subscribe(
+        {
+          next(value) {
+            console.log(value);
+          },
+        }
+      )
+  }
+
+  @ViewChild('myTable') table?: DatatableComponent;
   isLoading = true;
   isError = false;
   selected: Action[] = [];
@@ -59,10 +72,19 @@ export class ActionListPage implements OnInit {
   }
 
   onRowSelect(event: Action) {
-    console.log(this.selected = [...this.selected, event]);
+    // console.log(this.selected = [...this.selected, event]);
   }
 
   allowSelection(row: Action) {
     return row.createdBy !== 'Beryl Rice';
+  }
+
+  toggleExpandRow(row: Action) {
+    console.log('Toggled Expand Row!', row);
+    this.table!.rowDetail.toggleExpandRow(row);
+  }
+
+  onDetailToggle(event: any) {
+    console.log('Detail Toggled', event, typeof event);
   }
 }

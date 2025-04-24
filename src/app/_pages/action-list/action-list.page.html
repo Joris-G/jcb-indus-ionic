@@ -45,16 +45,41 @@
       }
       @else(){
         <ngx-datatable
+        #myTable
       *ngIf="!isLoading && !isError && actionsRows.length > 0"
-      class="material"  
+      class="material expandable"
       [rows]="actionsRows"
+      [limit]="5"
         [columns]="columns"
+        [columnMode]="ColumnMode.force"
+        [scrollbarV]="true"
+
   [selectionType]="SelectionType.multiClick"
   [selectAllRowsOnPage]="false"
   [displayCheck]="allowSelection"
   [selectCheck]="allowSelection"
   (select)="onRowSelect($event)"
   >
+        <!-- Row Detail Template -->
+        <ngx-datatable-row-detail [rowHeight]="100" #myDetailRow (toggle)="onDetailToggle($event)">
+          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+            <div style="padding-left:35px;">
+              <div><strong>Détails</strong></div>
+              <div>{{ row.description }}</div>
+            </div>
+          </ng-template>
+        </ngx-datatable-row-detail>
+        
+        
+        <!-- Column Templates -->
+        <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
+          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+            <a href="javascript:void(0)" [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded"
+              title="Expand/Collapse Row" (click)="toggleExpandRow(row)">
+            </a>
+          </ng-template>
+        </ngx-datatable-column>
+
         <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
           <ng-template ngx-datatable-header-template let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
             <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn()" />
@@ -64,51 +89,45 @@
             <input type="checkbox" />
           </ng-template>
         </ngx-datatable-column>
+<!-- STATUS -->
         <ngx-datatable-column name="Statut" prop="status">
-          <!-- <ng-template ngx-datatable-header-template>
-            {{ col.name }}
-        </ng-template> -->
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            {{ value }}
+          <ng-template let-value="status" let-row="row" ngx-datatable-cell-template>
+            <!-- <ion-select value="value" placeholder="Select Pizza" >
+                                                                                  <ion-select-option value="en cours">En cours</ion-select-option>
+                                                                                  <ion-select-option value="ouvert">Ouvert</ion-select-option>
+                                                                                </ion-select> -->
+            <select #statusSelectElem [value]="row.status" (change)="statusChange(row, statusSelectElem.value)">
+              <option value="en cours" [selected]="row.status ==='en cours'">en cours</option>
+              <option value="inactive" [selected]="row.status ==='inactif'">inactif</option>
+              <option value="standby" [selected]="row.status ==='standby'">standby</option>
+              <option value="annulée" [selected]="row.status ==='annulée'">annulée</option>
+              <option value="ouverte" [selected]="row.status ==='ouverte'">ouverte</option>
+              <option value="terminée" [selected]="row.status ==='terminée'">terminée</option>
+            </select>
           </ng-template>
         </ngx-datatable-column>
+
+
         <ngx-datatable-column name="Créé par" prop="createdBy">
-          <!-- <ng-template ngx-datatable-header-template>
-            {{ col.name }}
-        </ng-template> -->
           <ng-template let-value="value" ngx-datatable-cell-template>
             {{ value }}
           </ng-template>
         </ngx-datatable-column>
+
+
         <ngx-datatable-column name="Titre" prop="title" [sortable]="true">
-          <!-- <ng-template ngx-datatable-header-template>
-            {{ col.name }}
-        </ng-template> -->
           <ng-template let-value="value" ngx-datatable-cell-template>
             {{ value }}
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column name="Description">
-          <!-- <ng-template ngx-datatable-header-template>
-            {{ col.name }}
-        </ng-template> -->
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            {{ value }}
-          </ng-template>
-        </ngx-datatable-column>
+
         <ngx-datatable-column name="Date de besoin" prop="needDate">
-          <!-- <ng-template ngx-datatable-header-template>
-            {{ col.name }}
-        </ng-template> -->
           <ng-template let-value="value" ngx-datatable-cell-template>
             {{ value | date : "dd/MM/yyyy" }}
           </ng-template>
         </ngx-datatable-column>
 
         <ngx-datatable-column name="Responsable">
-          <!-- <ng-template ngx-datatable-header-template>
-            {{ col.name }}
-        </ng-template> -->
           <ng-template let-value="value" ngx-datatable-cell-template>
             {{ value }}
           </ng-template>

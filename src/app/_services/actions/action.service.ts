@@ -8,8 +8,15 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ActionService  {
-  private readonly http = inject(HttpClient)
+  private readonly http = inject(HttpClient);
+
+
   getActions(): Observable<Action[]> {
     return this.http.get<Action[]>(`${environment.apiUrl}/actions`);
+  }
+
+
+  update(id: number, newValue: Action): Observable<Action> {
+    return this.http.patch<Action>(`${environment.apiUrl}/actions/${id}`, newValue);
   }
 }
