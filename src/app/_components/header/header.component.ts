@@ -18,6 +18,7 @@ export class HeaderComponent {
   private headerTitleService = inject(HeaderTitleService);
   public pageTitle$: Observable<string> = this.headerTitleService.title;
   private authService = inject(AuthService);
+  public user$ = this.authService.user$;
   constructor() { }
 
 

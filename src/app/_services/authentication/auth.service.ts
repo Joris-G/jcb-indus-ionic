@@ -1,8 +1,9 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
-import { catchError, delay, mergeMap, tap } from 'rxjs/operators';
+import { catchError, delay, map, mergeMap, tap } from 'rxjs/operators';
+import { User } from 'src/app/_interfaces/user.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -15,18 +16,23 @@ export class AuthService {
   private isInLogginProcessSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public isInLogginProcess$: Observable<boolean> = this.isInLogginProcessSubject.asObservable();
 
-  private tokenExpirationTimer: any;
+
+  private readonly _user = new BehaviorSubject<User | null>(null);
+  readonly user$ = this._user.asObservable();
+
 
   constructor(private http: HttpClient, private router: Router) {
-    this.checkTokenExpiration();
+    // this.checkTokenExpiration();
   }
 
   login(email: string, password: string): Observable<any> {
     this.isInLogginProcessSubject.next(true);
-    return this.http.post<any>(`${environment.apiUrl}/auth/login`, { email, password }, { withCredentials: true }).pipe(
-      tap(() => {
+    return this.http.post<any>(`${environment.apiUrl}/auth/login`, { email, password }, {
+      withCredentials: true
+    }).pipe(
+      tap((response: any) => {
+        this.setUser(response.user);
         this.loggedInSubject.next(true);
-        this.startTokenExpirationTimer();
         this.isInLogginProcessSubject.next(false);
       }),
       catchError((error: HttpErrorResponse) => {
@@ -41,38 +47,18 @@ export class AuthService {
   logout(): void {
     this.http.post(`${environment.apiUrl}/auth/logout`, {}, { withCredentials: true }).subscribe(() => {
       this.loggedInSubject.next(false);
-      this.stopTokenExpirationTimer();
       this.router.navigate(['/login']);
     });
   }
-
-  getToken(): string | null {
-    return localStorage.getItem('token');
+  setUser(user: User) {
+    this._user.next(user);
   }
 
-  isLoggedIn(): boolean {
-    return !!this.getToken();
+  hasRole(role: string): Observable<boolean> {
+    return this.user$.pipe(
+      map(user => user?.role.includes(role) ?? false)
+    );
   }
 
-  private startTokenExpirationTimer(): void {
-    const tokenExpirationTime = 15 * 60 * 1000; // 15 minutes en millisecondes
-    this.tokenExpirationTimer = setTimeout(() => {
-      // Afficher l'alerte modale
-      // ...
-    }, tokenExpirationTime - 2 * 60 * 1000); // Afficher l'alerte 2 minutes avant l'expiration
-  }
 
-  private stopTokenExpirationTimer(): void {
-    clearTimeout(this.tokenExpirationTimer);
-  }
-
-  private checkTokenExpiration(): void {
-    const token = this.getToken();
-    if (token) {
-      const expirationDate = new Date(new Date().getTime() + 15 * 60 * 1000); // Date d'expiration du token
-      const now = new Date();
-      const expiresIn = expirationDate.getTime() - now.getTime();
-      this.startTokenExpirationTimer();
-    }
-  }
 }

@@ -11,7 +11,13 @@
 </ion-item>
 
 <ion-title>{{ pageTitle$ | async | uppercase }}</ion-title>
+<ion-chip color="primary" outline="true">
+  <ion-icon name="settings"></ion-icon>
 
+<ion-label *ngIf="user$ | async as user">{{user.firstname}} </ion-label>
+
+
+</ion-chip>
 <ion-buttons slot="start">
   <ion-button (click)="logoutClick()">
     <ion-icon slot="start" name="log-out-outline"></ion-icon>
